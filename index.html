@@ -229,7 +229,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-01-14 00:35:38 / Modified: 16:36:50" itemprop="dateCreated datePublished" datetime="2024-01-14T00:35:38+08:00">2024-01-14</time>
+              <time title="Created: 2024-01-14 00:35:38 / Modified: 23:43:25" itemprop="dateCreated datePublished" datetime="2024-01-14T00:35:38+08:00">2024-01-14</time>
             </span>
 
           
@@ -243,8 +243,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="BM6-判断链表中是否有环"><a href="#BM6-判断链表中是否有环" class="headerlink" title="BM6 判断链表中是否有环"></a>BM6 <a target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751681705163966958">判断链表中是否有环</a></h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>判断给定的链表中是否有环。如果有环则返回true，否则返回false。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><p>使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow 指针每次向后移动<strong>一个位置</strong>，而fast 指针向后移动<strong>两个位置</strong>。如果链表中存在环，则 fast 指针最终将再次与 slow 指针在环中相遇。</p>
+          <h1 id="判断链表中是否有环"><a
+target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751681705163966958">判断链表中是否有环</a></h1>
+<h2 id="描述">描述</h2>
+<p>判断给定的链表中是否有环。如果有环则返回true，否则返回false。</p>
+<h2 id="思路">思路</h2>
+<h3 id="双指针">双指针</h3>
+<p>使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow
+指针每次向后移动<strong>一个位置</strong>，而fast
+指针向后移动<strong>两个位置</strong>。如果链表中存在环，则 fast
+指针最终将再次与 slow 指针在环中相遇。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/1091309271.html#more" rel="contents">
@@ -253,6 +261,114 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/889907897.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DegreeQi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DegreeQi's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/889907897.html" class="post-title-link" itemprop="url">日志-Hexo博客开发记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-12-29 07:35:38" itemprop="dateCreated datePublished" datetime="2023-12-29T07:35:38+08:00">2023-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-01-14 23:41:01" itemprop="dateModified" datetime="2024-01-14T23:41:01+08:00">2024-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="section">2024-01-14</h1>
+<h2 id="图片引用路径">图片引用路径</h2>
+<h3 id="本地图片渲染">1. 本地图片渲染</h3>
+<p>在 <span
+style="background-color: skyblue; color: white;padding: .2em .6em .3em;">站点配置文件</span>
+中设置<code>post_asset_folder: true</code>，当该配置被应用后，使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。</p>
+<blockquote>
+<p>若文件名为postname.md，则创建新博客时会在同一级目录下创建postname文件夹，用于保存图片</p>
+</blockquote>
+<p>使用Typora时，设置图片文件保存路径: ./${filename} 即保存到与
+当前正在编辑的文件名 相同的同级文件夹下，和Hexo的要求一致。</p>
+<p>现在，我们在 Typora下使用
+<code>![example](postname/example.jpg)</code>引用图片，享受实时预览，</p>
+<h3 id="转换引用路径-hexo-asset-img">2. 转换引用路径:
+hexo-asset-img</h3>
+<p>但是Hexo渲染时，不会为图片引用补上前缀，即为<code>\example.png</code>而非<code>\webpath\example.png</code></p>
+<p>使之发布后能正确加载我们的图片，还需要做以下转换:<code>![example](postname/example.jpg) --&gt; &#123;% asset_img example.jpg example %&#125;</code></p>
+<p>使用<code>npm install hexo-asset-img --save</code>引入hexo-asset-img</p>
+<h3 id="参考">参考</h3>
+<p>渲染原理和插件逻辑：<a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/guide2it/p/11111715.html">Hexo+NexT（六）：手把手教你编写一个Hexo过滤器插件</a></p>
+<p>插件实现：<a
+target="_blank" rel="noopener" href="https://moeci.com/posts/hexo-typora/#配置-hexo-图片文件夹">Hexo+Typora+开发Hexo插件
+解决图片路径不一致</a></p>
+<h2 id="博客名称去中文和加密">博客名称去中文和加密</h2>
+<p>hexo博客初始化的url是年月日+题目<code>:year/:month/:day/:title/</code>，这样的url不便与分享，中文会乱码，而且一旦修改了题目就会导致之前分享的url无法定位资源。</p>
+<h3 id="方案-hexo-abbrlink">方案: hexo-abbrlink</h3>
+<p>使用插件<code>abbrlink</code>，使用<code>npm install hexo-abbrlink --save</code>下载。</p>
+<p>在 <span
+style="background-color: skyblue; color: white;padding: .2em .6em .3em;">站点配置文件</span>
+中设置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment"># crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">dec</span>     <span class="comment"># dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<p>rep有bug,
+如1111e111这种结果在js中会被认为时科学计数法表示的数字而非字符。此时创建文件夹（图片保存），node.js会报错，故推荐dec</p>
+<h2 id="支持latex数学公式渲染">支持Latex（数学公式渲染）</h2>
+<h3 id="方案-hexo-renderer-pandoc">方案: hexo-renderer-pandoc</h3>
+<p>hexo-renderer-pandoc这个插件将markdown文件变成html文件，然后next主题中的mathjax对其进行解析，然后我们就可以看到解析好之后的公式了。</p>
+<p>先卸载hexo自带的makrdown渲染工具，在下载</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-markded --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+<p>接下来需要将主题切换成next（支持Mathjax）</p>
+<p>在 <span
+style="background-color: purple; color: white;padding: .2em .6em .3em;">主题配置文件</span>
+中设置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># See: https://mhchem.github.io/MathJax-mhchem/</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -410,12 +526,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -499,6 +615,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
