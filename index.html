@@ -160,6 +160,80 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/1754519842.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DegreeQi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DegreeQi's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1754519842.html" class="post-title-link" itemprop="url">Java个人笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-01-22 22:01:46" itemprop="dateCreated datePublished" datetime="2024-01-22T22:01:46+08:00">2024-01-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-01-29 15:24:56" itemprop="dateModified" datetime="2024-01-29T15:24:56+08:00">2024-01-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Knowledge-Base/" itemprop="url" rel="index"><span itemprop="name">Knowledge Base</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/posts/1722211814.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -185,7 +259,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-01-18 16:22:02 / Modified: 17:28:08" itemprop="dateCreated datePublished" datetime="2024-01-18T16:22:02+08:00">2024-01-18</time>
+              <time title="Created: 2024-01-18 16:22:02 / Modified: 17:36:10" itemprop="dateCreated datePublished" datetime="2024-01-18T16:22:02+08:00">2024-01-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,34 +291,14 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
 <p>每一件物品其实只有两个状态，取或者不取，所以可以使用回溯法搜索出所有的情况，那么时间复杂度就是O(2^n)，这里的n表示物品数量。</p>
 <h3 id="动态规划">动态规划</h3>
 <p>显然暴力法指数级的空间复杂度是不可接受的，下面使用动规简化为O(VN)</p>
-<ol type="1">
-<li><p>定义dp[]</p>
-<p>使用二维数组，即<code>dp[i][j]</code>
-表示<strong>从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</strong>。</p></li>
-<li><p>确定递推公式</p>
-<p>发现有两种推出<code>dp[i][j]</code>的方向：</p>
-<ul>
-<li>由<code>dp[i-1][j]</code>推出，即背包容量为j，里面不放物品i的最大价值，此时<code>dp[i][j]</code>就是<code>dp[i-1][j]</code></li>
-<li>由<code>dp[i-1][j-weight[i]]</code>推出，<code>dp[i-1][j-weight[i]]</code>
-为背包容量为j-weight[i]的时候不放物品i的最大价值，那么<code>dp[i-1][j-weight[i]] + value[i]</code>
-（物品i的价值），就是背包放物品i得到的最大价值</li>
-</ul>
-<p>所以递归公式： <span class="math inline">\(dp[i][j] = max(dp[i -
-1][j], dp[i - 1][j - weight[i]] + value[i])\)</span></p></li>
-<li><p>初始化dp[]</p>
-<p>从dp的定义出发，如果背包容量j为0的话，即<code>dp[i][0]</code>，无论是选取哪些物品，背包价值总和一定为0。
-观察递推公式，发现必须初始化i为0的时候的值。即：存放编号0的物品的时候，各个容量的背包所能存放的最大价值。
-为获得最大值，其他下表初始化为最小值（小于正整数），即0。</p></li>
-<li><p>确定遍历顺序</p></li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">knapsack</span> <span class="params">(<span class="type">int</span> V, <span class="type">int</span> n, <span class="type">int</span>[][] vw)</span> &#123;</span><br><span class="line">    <span class="comment">// 定义dp</span></span><br><span class="line">    <span class="type">int</span>[][] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n][V + <span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 初始化dp</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;= V; ++j) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][j] = vw[<span class="number">0</span>][<span class="number">0</span>] &lt;= j ? vw[<span class="number">0</span>][<span class="number">1</span>] : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 递推与遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt;= V; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; vw[i][<span class="number">0</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span> dp[i][j] = Math.max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - vw[i][<span class="number">0</span>]] + vw[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>][V];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="a1-空间优化">a1 空间优化</h4>
-<p>dp[i]的结果依赖于dp[i-1]，能否只使用一个数组表示这两个值？
-答案是可以，可以发现<code>dp[i][j]</code>实际上只使用了上一行的较小下标的值。在原思路中j=1···V的顺序会覆盖上一行较小下标，但逆向遍历可以避免这种情况。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">knapsack</span> <span class="params">(<span class="type">int</span> V, <span class="type">int</span> n, <span class="type">int</span>[][] vw)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[V + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;= V; ++j) &#123;</span><br><span class="line">        dp[j] = vw[<span class="number">0</span>][<span class="number">0</span>] &lt;= j ? vw[<span class="number">0</span>][<span class="number">1</span>] : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> V; j &gt; <span class="number">0</span>; --j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!(j &lt; vw[i][<span class="number">0</span>])) </span><br><span class="line">                dp[j] = Math.max(dp[j], dp[j - vw[i][<span class="number">0</span>]] + vw[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[V];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="a2-一个常数优化">a2 一个常数优化</h4>
-<p>由于只需要最后dp[V]的值，倒推前一个物品，其实只要知道dp[V-w[n]]即可。以此类推，对以第j个背包，其实只需要知道到dp[V-sum{w[j..n]}]即可。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/1722211814.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -352,7 +406,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1091309271.html" class="post-title-link" itemprop="url">算法-有环链表的数学解法</a>
+            <a href="/posts/1091309271.html" class="post-title-link" itemprop="url">有环链表的数学解法</a>
         </h2>
 
         <div class="post-meta">
@@ -369,7 +423,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-01-16 17:50:47" itemprop="dateModified" datetime="2024-01-16T17:50:47+08:00">2024-01-16</time>
+                <time title="Modified: 2024-01-26 15:26:49" itemprop="dateModified" datetime="2024-01-26T15:26:49+08:00">2024-01-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -577,20 +631,20 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
