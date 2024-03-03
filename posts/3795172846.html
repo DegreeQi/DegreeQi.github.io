@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="01背包 已知一个背包最多能容纳体积之和为v的物品 现有 n 个物品，第 i 个物品的体积为 v[i] , 重量为 w[i] 求当前背包最多能装多大重量的物品? Solution 回溯法 每一件物品其实只有两个状态，取或者不取，所以可以使用回溯法搜索出所有的情况，那么时间复杂度就是O(2^n)，这里的n表示物品数量。 动态规划 显然暴力法指数级的空间复杂度是不可接受的，下面使用动规简">
+  <meta name="description" content="MySQL基本 MySQL存储结构 MySQL 存储的行为是由存储引擎实现的，MySQL 支持多种存储引擎，不同的存储引擎保存的文件自然也不同。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="背包问题（一）-01背包">
-<meta property="og:url" content="http://example.com/posts/1722211814.html">
+<meta property="og:title" content="MySQL个人笔记">
+<meta property="og:url" content="http://example.com/posts/3795172846.html">
 <meta property="og:site_name" content="DegreeQi&#39;s blog">
-<meta property="og:description" content="01背包 已知一个背包最多能容纳体积之和为v的物品 现有 n 个物品，第 i 个物品的体积为 v[i] , 重量为 w[i] 求当前背包最多能装多大重量的物品? Solution 回溯法 每一件物品其实只有两个状态，取或者不取，所以可以使用回溯法搜索出所有的情况，那么时间复杂度就是O(2^n)，这里的n表示物品数量。 动态规划 显然暴力法指数级的空间复杂度是不可接受的，下面使用动规简">
+<meta property="og:description" content="MySQL基本 MySQL存储结构 MySQL 存储的行为是由存储引擎实现的，MySQL 支持多种存储引擎，不同的存储引擎保存的文件自然也不同。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-18T08:22:02.000Z">
-<meta property="article:modified_time" content="2024-01-18T09:36:10.090Z">
+<meta property="article:published_time" content="2024-02-29T12:27:59.000Z">
+<meta property="article:modified_time" content="2024-03-03T03:46:59.805Z">
 <meta property="article:author" content="DegreeQi">
-<meta property="article:tag" content="背包问题">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/posts/1722211814.html">
+<link rel="canonical" href="http://example.com/posts/3795172846.html">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>背包问题（一）-01背包 | DegreeQi's blog</title>
+  <title>MySQL个人笔记 | DegreeQi's blog</title>
   
 
 
@@ -166,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/1722211814.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/3795172846.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          背包问题（一）-01背包
+          MySQL个人笔记
         </h1>
 
         <div class="post-meta">
@@ -188,17 +188,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-01-18 16:22:02 / Modified: 17:36:10" itemprop="dateCreated datePublished" datetime="2024-01-18T16:22:02+08:00">2024-01-18</time>
+              <time title="Created: 2024-02-29 20:27:59" itemprop="dateCreated datePublished" datetime="2024-02-29T20:27:59+08:00">2024-02-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-03-03 11:46:59" itemprop="dateModified" datetime="2024-03-03T11:46:59+08:00">2024-03-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+                  <a href="/categories/Knowledge-Base/" itemprop="url" rel="index"><span itemprop="name">Knowledge Base</span></a>
                 </span>
             </span>
 
@@ -213,43 +219,84 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="背包"><a
-target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751681705566263997">01背包</a></h1>
-<p>已知一个背包最多能容纳体积之和为v的物品 现有 n 个物品，第 i
-个物品的体积为 v[i] , 重量为 w[i] 求当前背包最多能装多大重量的物品?</p>
-<h2 id="solution">Solution</h2>
-<h3 id="回溯法">回溯法</h3>
-<p>每一件物品其实只有两个状态，取或者不取，所以可以使用回溯法搜索出所有的情况，那么时间复杂度就是O(2^n)，这里的n表示物品数量。</p>
-<h3 id="动态规划">动态规划</h3>
-<p>显然暴力法指数级的空间复杂度是不可接受的，下面使用动规简化为O(VN)</p>
+        <h2 id="mysql基本">MySQL基本</h2>
+<h3 id="mysql存储结构">MySQL存储结构</h3>
+<p>MySQL 存储的行为是由存储引擎实现的，MySQL
+支持多种存储引擎，不同的存储引擎保存的文件自然也不同。</p>
 <span id="more"></span>
-<ol type="1">
-<li><p>定义dp[]</p>
-<p>使用二维数组，即<code>dp[i][j]</code>
-表示<strong>从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</strong>。</p></li>
-<li><p>确定递推公式</p>
-<p>发现有两种推出<code>dp[i][j]</code>的方向：</p>
+<h4 id="innodb">InnoDB</h4>
+<p>InnoDB 是我们常用的存储引擎，也是 MySQL 默认的存储引擎。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;datadir&#x27;</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">---------------+-----------------+</span></span><br><span class="line"><span class="operator">|</span> Variable_name <span class="operator">|</span> <span class="keyword">Value</span>           <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------+-----------------+</span></span><br><span class="line"><span class="operator">|</span> datadir       <span class="operator">|</span> <span class="operator">/</span>var<span class="operator">/</span>lib<span class="operator">/</span>mysql<span class="operator">/</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">---------------+-----------------+</span></span><br><span class="line"><span class="number">1</span> <span class="type">row</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+<p>我们每创建一个 database（数据库） 都会在 /var/lib/mysql/
+目录里面创建一个以 database
+为名的目录，然后保存表结构和表数据的文件都会存放在这个目录里。</p>
+<p>比如，我这里有一个名为 my_test 的 database，该 database 里有一张名为
+t_order 数据库表。然后，我们进入 /var/lib/mysql/my_test
+目录，看看里面有什么文件？</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@xiaolin ~]#ls /var/lib/mysql/my_test</span><br><span class="line">db.opt  </span><br><span class="line">t_order.frm  </span><br><span class="line">t_order.ibd</span><br></pre></td></tr></table></figure>
+<p>可以看到，共有三个文件，这三个文件分别代表着：</p>
 <ul>
-<li>由<code>dp[i-1][j]</code>推出，即背包容量为j，里面不放物品i的最大价值，此时<code>dp[i][j]</code>就是<code>dp[i-1][j]</code></li>
-<li>由<code>dp[i-1][j-weight[i]]</code>推出，<code>dp[i-1][j-weight[i]]</code>
-为背包容量为j-weight[i]的时候不放物品i的最大价值，那么<code>dp[i-1][j-weight[i]] + value[i]</code>
-（物品i的价值），就是背包放物品i得到的最大价值</li>
+<li>db.opt，用来存储当前数据库的默认字符集和字符校验规则。</li>
+<li>t_order.frm ，t_order 的<strong>表结构</strong>会保存在这个文件。在
+MySQL 中建立一张表都会生成一个.frm
+文件，该文件是用来保存每个表的元数据信息的，主要包含表结构定义。</li>
+<li>t_order.ibd，t_order
+的<strong>表数据</strong>会保存在这个文件。表数据既可以存在共享表空间文件（文件名：ibdata1）里，也可以存放在独占表空间文件（文件名：表名字.ibd）。这个行为是由参数
+innodb_file_per_table 控制的，若设置了参数 innodb_file_per_table 为
+1，则会将存储的数据、索引等信息单独存储在一个独占表空间，从 MySQL 5.6.6
+版本开始，它的默认值就是 1 了，因此从这个版本之后， MySQL
+中每一张表的数据都存放在一个独立的 .ibd 文件。</li>
 </ul>
-<p>所以递归公式： <span class="math inline">\(dp[i][j] = max(dp[i -
-1][j], dp[i - 1][j - weight[i]] + value[i])\)</span></p></li>
-<li><p>初始化dp[]</p>
-<p>从dp的定义出发，如果背包容量j为0的话，即<code>dp[i][0]</code>，无论是选取哪些物品，背包价值总和一定为0。
-观察递推公式，发现必须初始化i为0的时候的值。即：存放编号0的物品的时候，各个容量的背包所能存放的最大价值。
-为获得最大值，其他下表初始化为最小值（小于正整数），即0。</p></li>
-<li><p>确定遍历顺序</p></li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">knapsack</span> <span class="params">(<span class="type">int</span> V, <span class="type">int</span> n, <span class="type">int</span>[][] vw)</span> &#123;</span><br><span class="line">    <span class="comment">// 定义dp</span></span><br><span class="line">    <span class="type">int</span>[][] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n][V + <span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 初始化dp</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;= V; ++j) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][j] = vw[<span class="number">0</span>][<span class="number">0</span>] &lt;= j ? vw[<span class="number">0</span>][<span class="number">1</span>] : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 递推与遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt;= V; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; vw[i][<span class="number">0</span>]) dp[i][j] = dp[i-<span class="number">1</span>][j];</span><br><span class="line">            <span class="keyword">else</span> dp[i][j] = Math.max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - vw[i][<span class="number">0</span>]] + vw[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[n - <span class="number">1</span>][V];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="a1-空间优化">a1 空间优化</h4>
-<p>dp[i]的结果依赖于dp[i-1]，能否只使用一个数组表示这两个值？
-答案是可以，可以发现<code>dp[i][j]</code>实际上只使用了上一行的较小下标的值。在原思路中j=1···V的顺序会覆盖上一行较小下标，但逆向遍历可以避免这种情况。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">knapsack</span> <span class="params">(<span class="type">int</span> V, <span class="type">int</span> n, <span class="type">int</span>[][] vw)</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[V + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;= V; ++j) &#123;</span><br><span class="line">        dp[j] = vw[<span class="number">0</span>][<span class="number">0</span>] &lt;= j ? vw[<span class="number">0</span>][<span class="number">1</span>] : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> V; j &gt; <span class="number">0</span>; --j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!(j &lt; vw[i][<span class="number">0</span>])) </span><br><span class="line">                dp[j] = Math.max(dp[j], dp[j - vw[i][<span class="number">0</span>]] + vw[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[V];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="a2-一个常数优化">a2 一个常数优化</h4>
-<p>由于只需要最后dp[V]的值，倒推前一个物品，其实只要知道dp[V-w[n]]即可。以此类推，对以第j个背包，其实只需要知道到dp[V-sum{w[j..n]}]即可。</p>
+<p>好了，现在我们知道了一张数据库表的数据是保存在「 表名字.ibd
+」的文件里的，这个文件也称为独占表空间文件。</p>
+<p><strong>表空间由段（segment）、区（extent）、页（page）、行（row）组成</strong>，InnoDB存储引擎的逻辑存储结构大致如下图：</p>
+<figure>
+<img
+src="https://cdn.xiaolincoding.com/gh/xiaolincoder/mysql/row_format/%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%BB%93%E6%9E%84.drawio.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h5 id="行row">1、行（row）</h5>
+<p>数据库表中的记录都是按行（row）进行存放的，每行记录根据不同的行格式，有不同的存储结构。</p>
+<p>后面我们详细介绍 InnoDB
+存储引擎的行格式，也是本文重点介绍的内容。</p>
+<h5 id="页page">2、页（page）</h5>
+<p>记录是按照行来存储的，但是数据库的读取并不以「行」为单位，否则一次读取（也就是一次
+I/O 操作）只能处理一行数据，效率会非常低。</p>
+<p>因此，<strong>InnoDB
+的数据是按「页」为单位来读写的</strong>，也就是说，当需要读一条记录的时候，并不是将这个行记录从磁盘读出来，而是以页为单位，将其整体读入内存。</p>
+<p><strong>默认每个页的大小为 16KB</strong>，也就是最多能保证 16KB
+的连续存储空间。</p>
+<p>页是 InnoDB 存储引擎磁盘管理的最小单元，意味着数据库每次读写都是以
+16KB 为单位的，一次最少从磁盘中读取 16K
+的内容到内存中，一次最少把内存中的 16K 内容刷新到磁盘中。</p>
+<p>页的类型有很多，常见的有数据页、undo
+日志页、溢出页等等。数据表中的行记录是用「数据页」来管理的，数据页的结构这里我就不讲细说了，之前文章有说过，感兴趣的可以去看这篇文章：<a
+target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/index/page.html">换一个角度看 B+
+树(opens new window)</a></p>
+<p>总之知道表中的记录存储在「数据页」里面就行。</p>
+<h5 id="区extent">3、区（extent）</h5>
+<p>我们知道 InnoDB 存储引擎是用 B+ 树来组织数据的。</p>
+<p>B+
+树中每一层都是通过双向链表连接起来的，如果是以页为单位来分配存储空间，那么链表中相邻的两个页之间的物理位置并不是连续的，可能离得非常远，那么磁盘查询时就会有大量的随机I/O，随机
+I/O 是非常慢的。</p>
+<p>解决这个问题也很简单，就是让链表中相邻的页的物理位置也相邻，这样就可以使用顺序
+I/O 了，那么在范围查询（扫描叶子节点）的时候性能就会很高。</p>
+<p>那具体怎么解决呢？</p>
+<p><strong>在表中数据量大的时候，为某个索引分配空间的时候就不再按照页为单位分配了，而是按照区（extent）为单位分配。每个区的大小为
+1MB，对于 16KB 的页来说，连续的 64
+个页会被划为一个区，这样就使得链表中相邻的页的物理位置也相邻，就能使用顺序
+I/O 了</strong>。</p>
+<h5 id="段segment">4、段（segment）</h5>
+<p>表空间是由各个段（segment）组成的，段是由多个区（extent）组成的。段一般分为数据段、索引段和回滚段等。</p>
+<ul>
+<li>索引段：存放 B+ 树的非叶子节点的区的集合；</li>
+<li>数据段：存放 B+ 树的叶子节点的区的集合；</li>
+<li>回滚段：存放的是回滚数据的区的集合，之前讲<a
+target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/transaction/mvcc.html">事务隔离
+(opens new window)</a>的时候就介绍到了 MVCC
+利用了回滚段实现了多版本查询数据。</li>
+</ul>
 
     </div>
 
@@ -259,7 +306,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag"># 背包问题</a>
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
           </div>
 
         
@@ -268,13 +315,10 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/2572578974.html" rel="prev" title="test">
-      <i class="fa fa-chevron-left"></i> test
+    <a href="/posts/2646816323.html" rel="prev" title="Redis个人笔记">
+      <i class="fa fa-chevron-left"></i> Redis个人笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/1754519842.html" rel="next" title="Java个人笔记">
-      Java个人笔记 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -333,7 +377,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">01背包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">1.1.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">回溯法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">1.1.2.</span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a1-%E7%A9%BA%E9%97%B4%E4%BC%98%E5%8C%96"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">a1 空间优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a2-%E4%B8%80%E4%B8%AA%E5%B8%B8%E6%95%B0%E4%BC%98%E5%8C%96"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">a2 一个常数优化</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql%E5%9F%BA%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">MySQL基本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#innodb"><span class="nav-number">1.1.1.</span> <span class="nav-text">InnoDB</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8Crow"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1、行（row）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A1%B5page"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2、页（page）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8C%BAextent"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">3、区（extent）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AE%B5segment"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">4、段（segment）</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
