@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="判断链表中是否有环 描述 判断给定的链表中是否有环。如果有环则返回true，否则返回false。 思路 双指针 使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow 指针每次向后移动一个位置，而fast 指针向后移动两个位置。如果链表中存在环，则 fast 指针最终将再次与 slow 指针在环中相遇。">
+  <meta name="description" content="判断链表中是否有环  判断给定的链表中是否有环。如果有环则返回true，否则返回false。  Solution 双指针 使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow 指针每次向后移动一个位置，而fast 指针向后移动两个位置。如果链表中存在环，则 fast 指针最终将再次与 slow 指针在环中相遇。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有环链表的数学解法">
 <meta property="og:url" content="http://example.com/posts/1091309271.html">
 <meta property="og:site_name" content="DegreeQi&#39;s blog">
-<meta property="og:description" content="判断链表中是否有环 描述 判断给定的链表中是否有环。如果有环则返回true，否则返回false。 思路 双指针 使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow 指针每次向后移动一个位置，而fast 指针向后移动两个位置。如果链表中存在环，则 fast 指针最终将再次与 slow 指针在环中相遇。">
+<meta property="og:description" content="判断链表中是否有环  判断给定的链表中是否有环。如果有环则返回true，否则返回false。  Solution 双指针 使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow 指针每次向后移动一个位置，而fast 指针向后移动两个位置。如果链表中存在环，则 fast 指针最终将再次与 slow 指针在环中相遇。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-01-13T16:35:38.000Z">
-<meta property="article:modified_time" content="2024-01-26T07:26:49.162Z">
+<meta property="article:modified_time" content="2024-03-03T04:34:47.744Z">
 <meta property="article:author" content="DegreeQi">
 <meta property="article:tag" content="链表">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-01-26 15:26:49" itemprop="dateModified" datetime="2024-01-26T15:26:49+08:00">2024-01-26</time>
+                <time title="Modified: 2024-03-03 12:34:47" itemprop="dateModified" datetime="2024-03-03T12:34:47+08:00">2024-03-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,9 +221,10 @@
       
         <h1 id="判断链表中是否有环"><a
 target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751681705163966958">判断链表中是否有环</a></h1>
-<h2 id="描述">描述</h2>
+<blockquote>
 <p>判断给定的链表中是否有环。如果有环则返回true，否则返回false。</p>
-<h2 id="思路">思路</h2>
+</blockquote>
+<h2 id="solution">Solution</h2>
 <h3 id="双指针">双指针</h3>
 <p>使用两个指针，fast 与 slow。它们起始都位于链表的头部。随后，slow
 指针每次向后移动<strong>一个位置</strong>，而fast
@@ -231,13 +232,13 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
 指针最终将再次与 slow 指针在环中相遇。</p>
 <span id="more"></span>
 <h3 id="hash">hash</h3>
-<h2 id="代码">代码</h2>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">hasCycle</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">slow</span>  <span class="operator">=</span> head, fast = head;</span><br><span class="line">    <span class="keyword">while</span> (fast != <span class="literal">null</span>) &#123;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next;</span><br><span class="line">        <span class="keyword">if</span> (fast == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span> fast = fast.next;</span><br><span class="line">        <span class="keyword">if</span> (slow.equals( fast)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="链表中环的入口结点"><a
 target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751681705164397943">链表中环的入口结点</a></h1>
-<h2 id="描述-1">描述</h2>
+<blockquote>
 <p>给一个长度为n链表，若其中包含环，请找出该链表的环的入口结点，否则，返回null。</p>
-<h2 id="思路-1">思路</h2>
+</blockquote>
+<h2 id="solution-1">Solution</h2>
 <h3 id="数学">数学</h3>
 <p>通过定义slow和fast指针，slow每走一步，fast走两步。若是有环，则一定会在环的某个结点处相遇。（slow
 == fast）</p>
@@ -250,19 +251,18 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
 <p>故可知，两指针相遇时，慢指针已经走了nb步，已知我们要走到入口节点，需要走a+kb步，而这时s=nb，只要再走a步即可到达入口。换言之，<strong>从相遇处到入口结点的距离与头结点与入口结点的距离相同</strong>。</p>
 <p>或者，对slow而言，它和fast的间距为r-x。也就是说，相遇时slow已走完r-x步，回到入口的距离为x。</p>
 <p>故我们把快指针移动到头节点，速度减少为1，满指针不变。当它们相遇时所处的位置就是入口节点。</p>
-<h2 id="代码-1">代码</h2>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">EntryNodeOfLoop</span><span class="params">(ListNode pHead)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">slow</span>  <span class="operator">=</span> pHead, fast = pHead;</span><br><span class="line">    <span class="keyword">while</span> (fast != <span class="literal">null</span>) &#123;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next;</span><br><span class="line">        <span class="keyword">if</span> (fast == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">else</span> fast = fast.next;</span><br><span class="line">        <span class="keyword">if</span> (slow.equals(fast)) &#123;</span><br><span class="line">            fast = pHead;</span><br><span class="line">            <span class="keyword">while</span> (!fast.equals(slow)) &#123;</span><br><span class="line">                slow = slow.next;</span><br><span class="line">                fast = fast.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> slow;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="两个链表的第一个公共结点"><a
 target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751681705241720933">两个链表的第一个公共结点</a></h1>
-<h2 id="描述-2">描述</h2>
+<blockquote>
 <p>输入两个无环的单向链表，找出它们的第一个公共结点，如果没有公共节点则返回空。（注意因为传入数据是链表，所以错误测试数据的提示是用其他方式显示的，保证传入数据是正确的）</p>
-<h2 id="思路-2">思路</h2>
+</blockquote>
+<h2 id="solution-2">Solution</h2>
 <h3 id="双指针1">双指针1</h3>
 <p>对于两个链表的问题，首先想到双指针的方法。在这道题中，两个链表长度不一定相等，不能直接使用双指针，我们需要在长链表上先移动一段距离，再进行比较。因为公共部分肯定在链表后面部分，所以不需要担心这一操作导致跳过了第一个公共结点。</p>
 <h3 id="双指针2">双指针2</h3>
 <p>对于两个链表长度不一定相等的问题，有没有什么办法可以将两个链表长度对齐呢？
 假设链表1的长度为a，链表2的长度为b，无论a是否等于b，a+b恒等于b+a。由此，我们可以考虑将两个链表拼接起来，再使用双指针。</p>
-<h2 id="代码-2">代码</h2>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">FindFirstCommonNode</span><span class="params">(ListNode pHead1, ListNode pHead2)</span> &#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">l1</span> <span class="operator">=</span> pHead1, l2 = pHead2;</span><br><span class="line">    <span class="keyword">while</span>(l1 != l2)&#123;</span><br><span class="line">        l1 = (l1==<span class="literal">null</span>)?pHead2:l1.next;</span><br><span class="line">        l2 = (l2==<span class="literal">null</span>)?pHead1:l2.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -347,7 +347,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E4%B8%AD%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">判断链表中是否有环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">1.2.1.</span> <span class="nav-text">双指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash"><span class="nav-number">1.2.2.</span> <span class="nav-text">hash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">链表中环的入口结点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-1"><span class="nav-number">2.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-number">2.2.1.</span> <span class="nav-text">数学</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">两个链表的第一个公共结点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0-2"><span class="nav-number">3.1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF-2"><span class="nav-number">3.2.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%881"><span class="nav-number">3.2.1.</span> <span class="nav-text">双指针1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%882"><span class="nav-number">3.2.2.</span> <span class="nav-text">双指针2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="nav-number">3.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E4%B8%AD%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">判断链表中是否有环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">1.1.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%88"><span class="nav-number">1.1.1.</span> <span class="nav-text">双指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash"><span class="nav-number">1.1.2.</span> <span class="nav-text">hash</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%8E%AF%E7%9A%84%E5%85%A5%E5%8F%A3%E7%BB%93%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">链表中环的入口结点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-1"><span class="nav-number">2.1.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-number">2.1.1.</span> <span class="nav-text">数学</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E7%BB%93%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">两个链表的第一个公共结点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-2"><span class="nav-number">3.1.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%881"><span class="nav-number">3.1.1.</span> <span class="nav-text">双指针1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%8C%87%E9%92%882"><span class="nav-number">3.1.2.</span> <span class="nav-text">双指针2</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -361,7 +361,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -374,7 +374,7 @@ target="_blank" rel="noopener" href="https://www.nowcoder.com/share/jump/6323751
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
